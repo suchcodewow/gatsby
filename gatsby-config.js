@@ -1,8 +1,25 @@
 module.exports = {
-    siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+  siteMetadata: {
+    siteUrl: `https://www.yourdomain.tld`,
+    title: "suchcodewow",
+  },
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `tutorials`,
+        path: `${__dirname}/tutorial`,
+      },
     },
-    plugins: [
-
-    ]
-}
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        footnotes: true,
+        gfm: true,
+        plugins: [],
+      },
+    },
+  ],
+};
